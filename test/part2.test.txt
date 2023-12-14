@@ -1,0 +1,14 @@
+//Test 1
+getter()
+expected 0 0
+
+//Test 2
+setter(5, 5)
+getter()
+expected 5 5
+
+//Test 3
+setter(5, 5)
+setter(23, 23)
+getter()
+expected 23 23

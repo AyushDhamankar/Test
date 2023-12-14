@@ -1,0 +1,23 @@
+//Test 1
+Account1 call getter()
+expected 0 0
+
+//Test 2
+Owner call setter(5, 5)
+Owner call getter()
+expected 5 5
+
+//Test 3
+Owner call setter(23, 23)
+Account1 call getter()
+expected 23, 23
+
+//Test 3
+Account1 call setter(23, 23)
+expected error transaction reverted
+
+//Q1. Do you think we can use OpenZeppelin’s Ownable contract here?
+Yes, because it will restrict the access of another account then owner and owner can only access the setter function our smart contract and the getter function can be accessable by anyone because there is not any kind of onlyOwner modifier.
+
+//Q3. We want our contracts to be secure against Reentrancy. Do you think a Reentrancy guard is applicable? Add a few lines of reasoning to back up your answer.
+Yes, we can implement Reentrancy gaurd in smart contract that prevent from reentrancy attacks on the smart contract from OpenZeppelin. We just need to add nonReentrant modifier to the function which we want to secure.
